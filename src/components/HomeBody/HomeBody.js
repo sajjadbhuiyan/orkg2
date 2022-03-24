@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Route, Routes } from "react-router-dom";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,6 +12,9 @@ import convince from '../../img/benefits/convince.svg';
 import feedback from '../../img/benefits/feedback.svg';
 import reputation from '../../img/benefits/reputation.svg';
 import visibility from '../../img/benefits/visibility.svg';
+import Item2 from "../../Items/Item2";
+import Itme1 from "../../Items/Itme1";
+import BodyHeader from "../BodyHeader/BodyHeader";
 import './HomeBody.css';
 
 export default function HomeBody() {
@@ -31,8 +35,13 @@ export default function HomeBody() {
 
             <div className='grid gap-x-4 sm:gap-y-4 lg:grid-cols-3 sm:grid-cols-1 my-4'>
                     <div className='lg:col-span-2 sm:col-span-1'>
-                    
-
+                        <BodyHeader></BodyHeader>
+                        <div className="w-full h-96 bg-gray-500 text-white pt-32">
+                            <Routes>
+                                <Route path="home/item1" element={<Itme1></Itme1>}/>
+                                <Route path="home/item2" element={<Item2></Item2>} />
+                            </Routes>
+                        </div>
                     </div>
 
 
@@ -61,7 +70,7 @@ export default function HomeBody() {
                                     <SwiperSlide className="py-2">
                                         <h2 className="text-xl">New feature: literature lists</h2>
                                         <span className="italic text-sm text-gray-600">13 December 2021</span>
-                                        <p className="text-gray-600">The ORKG literature list feature is now available. You can now create a curated list <br></br> of related literature and they can form the starting point of ORKG comparisons. <a className="text-red-400 hover:border-b" href="#">Visit the literature lists</a></p>
+                                        <p className="text-gray-600">The ORKG literature list feature is now available. You can now create a curated list <br></br> of related literature and they can form the starting point of ORKG comparisons. <Link className="text-red-400 hover:border-b" to="">Visit the literature lists</Link></p>
                                     </SwiperSlide>
                                 </Swiper>
                             </div>

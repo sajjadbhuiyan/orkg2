@@ -8,10 +8,9 @@ export default function Home() {
   return (
     <div>
         <Header></Header>
-    {/* <Banner2></Banner2> */}
-    <Banner></Banner>
-    <HomeBody></HomeBody>
-    <Footer></Footer>
+        <Banner></Banner>
+        <HomeBody></HomeBody>
+        <Footer></Footer>
     </div>
   )
 }
