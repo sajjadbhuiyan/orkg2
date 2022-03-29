@@ -32,15 +32,69 @@ code {
   position: absolute !important;
 }
 
-/* .banner {
-  position: relative;
-  z-index: 0;
-}
-
-.navbar-light {
-  background-color: transparent !important;
-} */
-
 .dropdown-toggle::after {
   display: none !important;
+}
+
+.accordion-button {
+  display: none;
+}
+
+.accordion-button:focus {
+  display: none !important;
+  border-bottom: 2rem !important;
+  border-width: 3rem !important;
+}
+
+.accordion-button {
+  color: none !important;
+  background-color: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* .accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: calc(0rem);
+  border-top-right-radius: calc(0rem);
+} */
+
+button:hover,
+button:focus {
+  outline: none;
+}
+
+.navbar-nav {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: rgb(211, 211, 211) !important;
+}
+
+.accordion-button::after {
+  display: none !important;
+}
+
+.collapsed {
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: none !important;
+}
+
+button {
+  border: none !important;
+}
+
+.modal-footer {
+  justify-content: space-around !important;
+}
+
+.form-control:focus {
+  border-color: bisque !important;
 }

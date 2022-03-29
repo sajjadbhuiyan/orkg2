@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,9 +12,8 @@ import convince from '../../img/benefits/convince.svg';
 import feedback from '../../img/benefits/feedback.svg';
 import reputation from '../../img/benefits/reputation.svg';
 import visibility from '../../img/benefits/visibility.svg';
-import Item2 from "../../Items/Item2";
-import Itme1 from "../../Items/Itme1";
 import BodyHeader from "../BodyHeader/BodyHeader";
+import CardSignIn from "../CardSignIn/CardSignIn";
 import './HomeBody.css';
 
 export default function HomeBody() {
@@ -36,12 +35,12 @@ export default function HomeBody() {
             <div className='grid gap-x-4 sm:gap-y-4 lg:grid-cols-3 sm:grid-cols-1 my-4'>
                     <div className='lg:col-span-2 sm:col-span-1'>
                         <BodyHeader></BodyHeader>
-                        <div className="w-full h-96 bg-gray-500 text-white pt-32">
+                        {/* <div className="w-full h-96 bg-gray-500 text-white pt-32">
                             <Routes>
                                 <Route path="home/item1" element={<Itme1></Itme1>}/>
                                 <Route path="home/item2" element={<Item2></Item2>} />
                             </Routes>
-                        </div>
+                        </div> */}
                     </div>
 
 
@@ -79,7 +78,7 @@ export default function HomeBody() {
                         <div className='px-4 my-2 drop-shadow-lg h-auto w-full rounded-md bg-white'>
                             <div className='border-b py-2 flex justify-between items-center'>
                                 <h4 className="py-1 m-0">Join ORKG!</h4>
-                                <button className="px-4 py-1 bg-gray-500 text-white rounded-md cursor-pointer">Sign Up</button>
+                                <CardSignIn></CardSignIn>
                             </div>
                             <div className="">
                                 <Swiper
