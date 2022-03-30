@@ -1,4 +1,4 @@
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Badge, Container, Dropdown, Nav, Navbar, NavDropdown } from 'react-bootstrap';
@@ -7,7 +7,7 @@ import SignIn from '../SignIn/SignIn';
 
 export default function Header() {
 
-  const element = <FontAwesomeIcon icon={faCoffee} />
+  
   return (
     <>
         <Navbar fixed="top" expand="lg" className='menu lg:absolute sm:relative sm:bg-nav-color lg:bg-transparent text-white'>
@@ -24,7 +24,7 @@ export default function Header() {
       >
 
         {/* ====view==== */}
-        <NavDropdown title="view" className='border-t border-gray-600  lg:border-t-0 lg:m-2 text-white'>
+        <NavDropdown title="view" className='border-t border-gray-600 lg:border-t-0 lg:m-2 text-white'>
           <NavDropdown.Item href="#action3">Comparisons</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Papers</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Visualizations</NavDropdown.Item>
@@ -61,28 +61,61 @@ export default function Header() {
 
         {/* =====about==== */}
         <NavDropdown title="About" className='border-t border-gray-600  lg:border-t-0 lg:m-2'>
-          <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action5">
-            Something else here
-          </NavDropdown.Item>
-          
-    
           <NavDropdown
             className='pl-2'
             id="dropdown-button-drop-end"
             drop="end"
-            title="dskk"
+            title="About"
           >
-            <Dropdown.Item>Action</Dropdown.Item>
-            <Dropdown.Item>Another action</Dropdown.Item>
-            <Dropdown.Item>Something else here</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item>Separated link</Dropdown.Item>
+            <Dropdown.Item>Overview</Dropdown.Item>
+            <Dropdown.Item>Teams</Dropdown.Item>
+            <Dropdown.Item>History</Dropdown.Item>
+            <Dropdown.Item>Publications</Dropdown.Item>
+            <Dropdown.Item>Workshopes</Dropdown.Item>
+            <Dropdown.Item>Outreach</Dropdown.Item>
+            <Dropdown.Item>ScienceGRAPH</Dropdown.Item>
           </NavDropdown>
-    
 
+          <NavDropdown
+            className='pl-2'
+            id="dropdown-button-drop-end"
+            drop="end"
+            title="Features"
+          >
+            <Dropdown.Item>Get Started</Dropdown.Item>
+            <Dropdown.Item>Comparisons</Dropdown.Item>
+            <Dropdown.Item>Reviews</Dropdown.Item>
+            <Dropdown.Item>List</Dropdown.Item>
+            <Dropdown.Item>Papers</Dropdown.Item>
+            <Dropdown.Item>Templates</Dropdown.Item>
+            <Dropdown.Item>Benchmarks</Dropdown.Item>
+            <Dropdown.Item>Integration</Dropdown.Item>
+          </NavDropdown>
+
+          <NavDropdown
+            className='pl-2'
+            id="dropdown-button-drop-end"
+            drop="end"
+            title="Get Involved"
+          >
+            <Dropdown.Item>Get Involved</Dropdown.Item>
+            <Dropdown.Item>Institures & Research Group</Dropdown.Item>
+            <Dropdown.Item>Libraries</Dropdown.Item>
+            <Dropdown.Item>Confarances and Journals</Dropdown.Item>
+            <Dropdown.Item>Observations</Dropdown.Item>
+            <Dropdown.Item>Curations Grants</Dropdown.Item>
+            <Dropdown.Item>Jobs</Dropdown.Item>
+            <Dropdown.Item>Theses Openings</Dropdown.Item>
+          </NavDropdown>
+          
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action3">Help Center</NavDropdown.Item>
+          <NavDropdown.Item href="#action4">Git Lab <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action4">Statitics</NavDropdown.Item>
+          <NavDropdown.Item href="#action5">
+            Something else here
+          </NavDropdown.Item>
         </NavDropdown>
         
 

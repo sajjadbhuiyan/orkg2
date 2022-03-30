@@ -32,8 +32,13 @@ code {
   position: absolute !important;
 }
 
-.dropdown-toggle::after {
-  display: none !important;
+@media only screen and (max-width: 320px) {
+  .dropdown-toggle::after {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    size: 50px;
+  }
 }
 
 .accordion-button {
@@ -74,6 +79,16 @@ button:focus {
 
 .navbar-light .navbar-nav .nav-link:hover {
   color: rgb(211, 211, 211) !important;
+}
+
+#dropdown-button-drop-end {
+  color: rgb(68, 68, 68) !important;
+}
+
+#dropdown-button-drop-end::after {
+  position: absolute;
+  right: 15px;
+  top: 16px;
 }
 
 .accordion-button::after {
