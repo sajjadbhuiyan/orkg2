@@ -1,0 +1,23 @@
+.footer_color {
+  background-color: #e0e2ea;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: gray;
+}
+
+.twitter {
+  text-decoration: none;
+  color: gray;
+}
+
+.twitter:hover {
+  text-decoration: underline;
+  color: #00acee;
+}
