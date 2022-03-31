@@ -28,7 +28,7 @@ export default function HomeBody() {
                     </div>
                     <div className='flex content-center items-center'>
                     <div className="relative md:block flex lg:mx-2">
-                        <input type="text" className="block py-1 pl-2 pr-6 w-40 text-gray-900 bg-gray-50 rounded-md focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Search for field.."/>
+                        <input type="text" className="block py-1 pl-2 pr-6 w-40 text-gray-900 bg-gray-50 rounded-md focus:ring-blue-500 focus:border-blue-500 border sm:text-sm" placeholder="Search for field.."/>
                         <div className="flex absolute inset-y-1 right-2 items-center py-1 pointer-events-none">
                         <svg className="h-4 w-4 fill-gray-400 divide-x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg>
                   </div>

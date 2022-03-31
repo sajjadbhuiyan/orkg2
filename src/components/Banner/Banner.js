@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import grapBackground from '../../img/graph-background.svg';
+import PlayVideo from '../PlayVideo/PlayVideo';
 
 export default function Banner() {
   return (
@@ -25,7 +26,7 @@ export default function Banner() {
                 </span>
               </div>
             </div>
-            <p className='text-lg font-medium text-gray-400 py-4'>The Open Research Knowledge Graph (ORKG) aims to describe research papers in a structured manner. With the <br className='sm:hidden lg:block'/> ORKG, papers are easier to find and compare. </p>
+            <p className='text-lg font-medium text-gray-300 py-4'>The Open Research Knowledge Graph (ORKG) aims to describe research papers in a structured manner. With the <br className='sm:hidden lg:block'/> ORKG, papers are easier to find and compare. <PlayVideo></PlayVideo> </p>
         </div>
     </>
   )
