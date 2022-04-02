@@ -113,3 +113,7 @@ button {
 .form-control:focus {
   border-color: bisque !important;
 }
+
+::selection {
+  background-color: rgb(245, 155, 155);
+}
