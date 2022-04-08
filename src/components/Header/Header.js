@@ -23,7 +23,7 @@ window.addEventListener('scroll', changeBackground);
   
   return (
     <>
-        <Navbar fixed='top'  expand="lg" className={ header ?'header active text-black': 'text-white sm:nav-color'}>
+        <Navbar fixed='top'  expand="lg" className={ header ?'header active text-black': 'text-white sm:bg-nav-color lg:bg-transparent'}>
   <Container>
     <Navbar.Brand href="#">
     <img src={header? logo : white_logo} alt='orkg'></img>
@@ -135,17 +135,11 @@ window.addEventListener('scroll', changeBackground);
       </Nav>
       <div className='lg:flex sm:flex-none'>
               
-              <div class="flex items-center justify-center">
-                <div class="flex border-2 border-red-400 rounded-lg">
-                    <input type="text" class="px-2 py-1 w-80 focus:ring-2 focus:ring-cus-orange rounded-lg" placeholder="Search..."/>
-                    <button class="flex items-center justify-center px-2 bg-white">
-                        <svg class="w-4 h-4 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-                        </svg>
-                    </button>
-                </div>
+                <div className="md:block flex lg:mx-2 relative">
+                  <input type="text" id="email-adress-icon" className="block p-2 pl-10 w-full rounded-lg focus:ring-4  focus:ring-cus-orange border border-cus-orange" placeholder="Search..."/>
+                  <div className="flex absolute inset-y-1 right-2 items-center py-1 pointer-events-none">
+                    <svg className={header? "w-5 h-5 text-cus-orange":"w-5 h-5 text-gray-500"} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                  </div>
               </div>
             
               <button type="button" className={header ? "text-white bg-cus-orange focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm lg:mx-2 sm:my-2 lg:my-0 lg:w-40 sm:w-full py-2 flex justify-center items-center":"text-black bg-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm lg:mx-2 sm:my-2 lg:my-0 lg:w-40 sm:w-full py-2 flex justify-center items-center"}>
