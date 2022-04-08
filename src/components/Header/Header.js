@@ -1,19 +1,32 @@
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { Badge, Container, Dropdown, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import logo from '../../img/logo.svg';
 import white_logo from '../../img/logo_white.svg';
 import SignIn from '../SignIn/SignIn';
 
 export default function Header() {
 
+  const [header, setHeader] = useState(false);
+
+  const changeBackground = () =>{
+    if(window.scrollY >= 80){
+        setHeader(true);
+    }else{
+        setHeader(false)
+    }
+}
+
+window.addEventListener('scroll', changeBackground);
+
   
   return (
     <>
-        <Navbar fixed="top" expand="lg" className='menu lg:absolute sm:relative sm:bg-nav-color lg:bg-transparent text-white'>
+        <Navbar fixed='top'  expand="lg" className={ header ?'header active text-black': 'text-white sm:nav-color'}>
   <Container>
     <Navbar.Brand href="#">
-    <img src={white_logo} alt='orkg'></img>
+    <img src={header? logo : white_logo} alt='orkg'></img>
     </Navbar.Brand>
     <Navbar.Toggle />
     <Navbar.Collapse>
@@ -24,7 +37,7 @@ export default function Header() {
       >
 
         {/* ====view==== */}
-        <NavDropdown title="view" className='border-t border-gray-600 lg:border-t-0 lg:m-2 text-white'>
+        <NavDropdown title="view" className={header? 'border-t border-gray-600 lg:border-t-0 lg:m-2 sticky-nav-link':'border-t border-gray-600 lg:border-t-0 lg:m-2'}>
           <NavDropdown.Item href="#action3">Comparisons</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Papers</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Visualizations</NavDropdown.Item>
@@ -47,7 +60,7 @@ export default function Header() {
         </NavDropdown>
         
         {/* =====tool===== */}
-        <NavDropdown title="Tool" className='border-t border-gray-600  lg:border-t-0 lg:m-2'>
+        <NavDropdown title="Tool" className={header? 'border-t border-gray-600 lg:border-t-0 lg:m-2 sticky-nav-link':'border-t border-gray-600 lg:border-t-0 lg:m-2'}>
           <NavDropdown.Item href="#action3">Tools overview</NavDropdown.Item>
           <NavDropdown.Item disabled href="#action4" className='text-sm'>Data entry</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Contribution editor</NavDropdown.Item>
@@ -60,7 +73,7 @@ export default function Header() {
         </NavDropdown>
 
         {/* =====about==== */}
-        <NavDropdown title="About" className='border-t border-gray-600  lg:border-t-0 lg:m-2'>
+        <NavDropdown title="About" className={header? 'border-t border-gray-600 lg:border-t-0 lg:m-2 sticky-nav-link':'border-t border-gray-600 lg:border-t-0 lg:m-2'}>
           <NavDropdown
             className='pl-2'
             id="dropdown-button-drop-end"
@@ -122,19 +135,25 @@ export default function Header() {
       </Nav>
       <div className='lg:flex sm:flex-none'>
               
-              <div className="md:block flex lg:mx-2">
-                  <input type="text" id="email-adress-icon" className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..."/>
-                  <div className="flex absolute inset-y-1 right-2 items-center py-1 pointer-events-none">
-                    <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-                  </div>
+              <div class="flex items-center justify-center">
+                <div class="flex border-2 border-red-400 rounded-lg">
+                    <input type="text" class="px-2 py-1 w-80 focus:ring-2 focus:ring-cus-orange rounded-lg" placeholder="Search..."/>
+                    <button class="flex items-center justify-center px-2 bg-white">
+                        <svg class="w-4 h-4 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                        </svg>
+                    </button>
+                </div>
               </div>
             
-              <button type="button" className="text-zinc-900 bg-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm lg:mx-2 sm:my-2 lg:my-0 lg:w-40 sm:w-full py-2 flex justify-center items-center">
-              <svg className='w-4 h-4 mr-2 -ml-1 fill-gray-900 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
+              <button type="button" className={header ? "text-white bg-cus-orange focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm lg:mx-2 sm:my-2 lg:my-0 lg:w-40 sm:w-full py-2 flex justify-center items-center":"text-black bg-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm lg:mx-2 sm:my-2 lg:my-0 lg:w-40 sm:w-full py-2 flex justify-center items-center"}>
+              <svg className={header ? 'w-4 h-4 mr-2 -ml-1 fill-white':'w-4 h-4 mr-2 -ml-1 fill-gray-900'} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
                     Add New
               </button>
               
-              <SignIn></SignIn>
+              <SignIn header={header}></SignIn>
 
       </div>
     </Navbar.Collapse>

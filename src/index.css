@@ -19,19 +19,6 @@ code {
     monospace;
 }
 
-.menu {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  background-color: transparent;
-}
-
-.navbar {
-  position: absolute !important;
-}
-
 @media only screen and (max-width: 320px) {
   .dropdown-toggle::after {
     position: absolute;
@@ -58,11 +45,6 @@ code {
   outline: none !important;
 }
 
-/* .accordion-item:first-of-type .accordion-button {
-  border-top-left-radius: calc(0rem);
-  border-top-right-radius: calc(0rem);
-} */
-
 button:hover,
 button:focus {
   outline: none;
@@ -73,11 +55,17 @@ button:focus {
   margin: 0;
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: white !important;
+.nav-link {
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none !important;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
+.sticky-nav-link a {
+  color: rgb(121, 116, 116) !important;
+  text-decoration: none !important;
+}
+
+.nav-link:hover {
   color: rgb(211, 211, 211) !important;
 }
 
@@ -93,9 +81,6 @@ button:focus {
 
 .accordion-button::after {
   display: none !important;
-}
-
-.collapsed {
 }
 
 .accordion-button:not(.collapsed) {
@@ -116,4 +101,18 @@ button {
 
 ::selection {
   background-color: rgb(245, 155, 155);
+}
+
+.header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1;
+}
+
+.header.active {
+  background-color: rgb(255, 255, 255);
+}
+
+.header.nav-link {
+  color: orange !important;
 }
