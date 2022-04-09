@@ -27,7 +27,7 @@ const DropdownButton = ({ color }) => {
           <div className="flex justify-end w-full">
             <button
               className={
-                "text-black font-normal focus:ring  focus:ring-red-400 border px-4 rounded-md" +
+                "text-black font-normal rounded-sm focus:ring  focus:ring-red-400 border px-4" +
                 bgColor
               }
               type="button"

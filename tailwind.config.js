@@ -10,6 +10,7 @@ module.exports = {
 
       colors: {
         'nav-color': '#5f6474',
+        'cus-orange': 'rgb(232, 97, 97)'
       },
       width: {
         '3/5': '70%',
