@@ -3,8 +3,6 @@ import { Form, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function SignIn({header}) {
-    // let {headerSticky} = header
-    // console.log(headerSticky)
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
