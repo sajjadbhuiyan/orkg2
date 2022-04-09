@@ -1,0 +1,27 @@
+/* .btn {
+    display: none;
+} */
+
+.btn-primary{
+    padding: 0 40px;
+    margin: 0;
+    background-color: transparent !important;
+    /* display: flex; */
+}
+
+.btn-primary:focus{
+    display: none;
+}
+
+.btn-primary::after{
+    display: none;
+}
+
+.addnew.dropdown-menu[data-bs-popper]{
+    left: -89%;
+    right: -87%;
+}
+
+.addnew.dropdown-menu a{
+    text-decoration: none;
+}
