@@ -6,6 +6,7 @@ import { faUserLarge } from '@fortawesome/free-solid-svg-icons';
 import { Badge, Button, Container, Dropdown, Form, FormControl, InputGroup, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import white_logo from '../../img/logo_white.svg';
+import logo from '../../img/logo.svg'
 
 const Header2 = () => {
         // const [click, setClick] = useState(false);
@@ -29,7 +30,7 @@ const Header2 = () => {
         <Navbar className={header ? 'header active' : 'header'} expand="lg">
   <Container>
     <Navbar.Brand href="#">
-    <img src={white_logo} alt='orkg'></img>
+    <img src={header? logo : white_logo} alt='orkg'></img>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
@@ -133,22 +134,21 @@ const Header2 = () => {
           </NavDropdown.Item>
         </NavDropdown>
       </Nav>
-      <Form className="d-flex mx-1">
-        <InputGroup>
-                <FormControl
-                type='search'
-                placeholder="search"
-                className='focus:ring focus:ring-red-200 bg-white'
-                />
-            <InputGroup.Text id="basic-addon1"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></InputGroup.Text>
-        </InputGroup>
-      </Form>
-        <Button className='px-4 mx-1 bg-white block' variant="light">
-            <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon> Add New
-        </Button>
-        <Button className={header ? 'addbutton active mx-1' : 'addbutton mx-1'} variant="danger">
-            <FontAwesomeIcon icon={faUserLarge}></FontAwesomeIcon> Sign In
-        </Button>
+      <div className='lg:flex sm:flex-none'>   
+            <div class="flex justify-center ">
+                <div class=" xl:w-96">
+                  <div class="input-group relative flex flex-wrap items-stretch w-full mb-4">
+                    <input type="search" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon3"/>
+                    <button class="btn inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" type="button" id="button-addon3">Search</button>
+                  </div>
+                </div>
+            </div>
+            
+            <button type="button" className="text-zinc-900 bg-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm lg:mx-2 sm:my-2 lg:my-0 lg:w-40 sm:w-full py-2 flex justify-center items-center">
+            <svg className='w-4 h-4 mr-2 -ml-1 fill-gray-900 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
+                  Add New
+            </button>
+      </div>
     </Navbar.Collapse>
   </Container>
 </Navbar>
